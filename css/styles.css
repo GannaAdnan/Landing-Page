@@ -1,0 +1,208 @@
+/*
+ *
+ * CSS written based on SMACSS architecture.
+ * To learn more, visit: http://smacss.com/
+ * 
+ * For simplicity, no reset or normalize is added. 
+ * To learn more, visit: https://css-tricks.com/reboot-resets-reasoning/
+ *
+*/
+
+
+/* ---- Base Rules ---- */
+
+body 
+{
+    margin: 0;
+    font-family:'Raleway';
+    color: rgb(0, 0, 0);
+    background-image: linear-gradient(to right bottom, #d16ba5, #c05c9c, #af4d93, #9d3f8a, #8b3182, #813285, #763487, #6b3589, #644395, #5c4fa0, #535aa9, #4a65b0);
+}
+
+
+/* Typeography General*/
+
+h1 
+{
+    font-family:'Raleway';
+    font-size: 3em;
+    margin: 2em 1rem;
+}
+
+@media only screen and (min-width: 35em)
+{
+    h1 
+    {
+        font-size: 7em;
+        margin: 2em 4rem 1em;
+    }
+}
+
+h3 
+{
+    font-family:'Raleway';
+    font-size: 2em;
+    color: rgb(255, 255, 255);
+    float: center;
+
+}
+
+p
+{
+    line-height: 1.6em;
+    color: rgb(255, 255, 255);
+    float: center;
+    font-family:'Raleway';
+
+}
+button
+{
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    z-index: 99;
+    font-size: 18px;
+    border: none;
+    outline: none;
+    background-color: rgba(194, 173, 173, 0.247);
+    color: white;
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 50%;
+}
+
+button:hover
+{
+    background-color: rgba(194, 173, 173, 0.5);
+
+}
+
+/* ---- Layout Rules ---- */
+
+main {
+    margin: 10vh 1em 10vh;
+}
+
+.main__hero
+{
+    text-align: left;
+    display: block;
+    padding: 1em;
+    font-weight: bolder;
+    text-decoration: none;
+    color:#ffffff;
+    float: center;
+    font-size: 20px;
+}
+
+section 
+{
+    position: relative;
+    min-height: 80vh;
+    width:60%;
+    margin-left: 300px;
+    
+}
+
+
+/* ---- Module Rules ---- */
+
+/* Navigation Styles*/
+
+.navbar__menu ul 
+{
+    padding-left: 0;
+    margin: 0;
+    text-align: right;
+}
+
+.navbar__menu li 
+{
+    display: inline-block;
+}
+
+.navbar__menu .menu__link 
+{
+    display: block;
+    padding: 1em;
+    font-weight: bold;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    text-align: center;
+}
+
+.navbar__menu .menu__link:hover 
+{
+    background: #333;
+    color: #fff;
+    transition: ease 0.3s all;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+}
+
+/* Header Styles */
+
+.page__header 
+{
+    background: rgba(255, 255, 255, 0.548);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 5;
+}
+
+/* Footer Styles */
+
+.page__footer 
+{
+    background: rgb(0, 0, 0); 
+    padding: 3em;
+    color: rgb(255, 255, 255,1);
+}
+
+.page__footer p
+{
+    color: rgb(255, 255, 255);
+}
+
+
+/* ---- Theme Rules ---- */
+/* Landing Container Styles */
+
+.landing__container {
+    padding: 1em;
+    text-align: left;
+}
+
+@media only screen and (min-width: 35em)
+{
+    .landing__container {
+        max-width: 50em;
+        padding: 4em;
+    }
+}
+
+
+
+
+
+/* ---- Theme State Rules ---- */
+/* Section Active Styles */
+section.your-active-class 
+{
+    background: rgb(0, 0, 0);
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0) 100%);
+}
+
+section.your-active-class .landing__container::before
+{
+    opacity: 1;
+    animation: rotate 4s linear 0s infinite forwards;
+}
+
+section.your-active-class .landing__container::after 
+{
+    opacity: 1;
+    animation: rotate 5s linear 0s infinite forwards reverse;
+}
+
